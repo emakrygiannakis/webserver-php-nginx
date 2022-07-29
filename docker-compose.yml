@@ -1,0 +1,41 @@
+﻿version: '3.3'
+
+services:
+  nginx-site:
+    container_name: webserver-nginx
+    restart: always
+    image: nginx
+    ports:
+      - ${HTTP_HOST_PORT}:80
+      - ${HTTPS_HOST_PORT}:443
+    volumes:
+      - ${VOL_SRC}:/var/www/sites
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./logs/nginx:/var/log/nginx
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/ssl.cert:/etc/nginx/ssl.cert
+    links:
+      - php-site
+    networks:
+      - webserver-site
+
+  php-site:
+    build:
+      context: ./php
+      dockerfile: Dockerfile
+      args:
+        user: webserveruser
+        uid: 1337
+    image: php-site
+    container_name: webserver-php
+    restart: unless-stopped
+    volumes:
+      - ${VOL_SRC}:/var/www/sites
+      - ./php/www.conf:/usr/local/etc/php-fpm.d/www.conf
+      - ./php/custom.ini:/usr/local/etc/php/conf.d/custom.ini
+    networks:
+      - webserver-site
+
+networks:
+    webserver-site:
+      driver: bridge

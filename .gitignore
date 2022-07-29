@@ -1,0 +1,4 @@
+.idea/
+.env
+/logs/
+/nginx/ssl.cert

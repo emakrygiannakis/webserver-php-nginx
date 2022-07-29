@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+chmod +x /etc/cron.d/crontab
+crontab /etc/cron.d/crontab
+
+service supervisor start
