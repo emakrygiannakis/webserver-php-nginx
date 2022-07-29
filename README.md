@@ -1,10 +1,12 @@
 # Simple php-nginx hello world application
 
-This repo has the nessecary files for a simple hello world application using a php and nginx container
+This repo has the nessecary files for a simple hello world application using a php8.1-fpm and the latest nginx.
+
 
 ## Requirments for this app in any OS
 
 You need to have install docker, docker-compose git and internet conection.
+
 
 ## installation and use
 
@@ -62,12 +64,18 @@ curl localhost:81/hello -v
 ```bash
 docker-compose down
 ```
+
+
 ## Usefull commands
-1. If  you need to access the logs of each container.
+- If  you need to access the logs of each container.
 ```bash
 docker logs container-name
 ```
-2. If  you need to access the command line of the container.
+- If  you need to access the command line of the container.
 ```bash
 docker exec -it container-name bash
+```
+- If you want to see the container that are running in the host that you are using:
+```bash
+docker ps
 ```
