@@ -28,9 +28,9 @@ cp .env.example .env
 vim .env 
 ```
 5. Specific operator system
-   If you are using linux or mac the in the env file the location needs to be like this `VOL_SRC=./www`. 
-   If you are using a windows machine you need to have it like this `VOL_SRC=www`.
-   If you application needs specific rights you need to edit the folder www accordintly.
+   - If you are using linux or mac the in the env file the location needs to be like this `VOL_SRC=./www`. 
+   - If you are using a windows machine you need to have it like this `VOL_SRC=www`.
+   - If you application needs specific rights you need to edit the folder www accordintly.
 6. Add the files for the php application inside the folder `www/public_html`.
 7. After you finish with your configuration, you can start the container using the following command, inside the folder that has the docker-compose.yml.
 ```bash
