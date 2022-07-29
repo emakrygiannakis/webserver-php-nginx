@@ -1,6 +1,6 @@
 # Simple php-nginx hello world application
 
-This repo has the nessecary files for a simple hello world application using a php8.1-fpm and the latest nginx.
+This repo has the nessecary files for a simple hello world application using php8.1-fpm and the latest nginx.
 
 
 ## Requirments for this app in any OS
@@ -21,7 +21,8 @@ cd nginx-php-webserver
 ```bash
 cp .env.example .env
 ```
-4. The variables can be changed in the file .env (important: If you don't know how to exit vim please use a different editor ;) )
+4. The variables can be changed in the file .env 
+(important: If you don't know how to exit vim please use a different editor ;) )
 ```bash
 vim .env 
 ```
