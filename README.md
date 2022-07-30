@@ -27,16 +27,12 @@ cp .env.example .env
 ```bash
 vim .env 
 ```
-5. Specific operator system
-   - If you are using linux or mac the in the env file the location needs to be like this `VOL_SRC=./www`. 
-   - If you are using a windows machine you need to have it like this `VOL_SRC=www`.
-   - If you application needs specific rights you need to edit the folder www accordintly.
-6. Add the files for the php application inside the folder `www/public_html`.
-7. After you finish with your configuration, you can start the container using the following command, inside the folder that has the docker-compose.yml.
+5. You can add the files for the php application inside the folder `www/public_html`. If you change the folder please place them inside there.
+6. After you finish with your configuration, you can start the container using the following command, inside the folder that has the docker-compose.yml.
 ```bash
 docker-compose up -d 
 ```
-8. You can access the app either using a browser by typing http://localhost/hello or using the curl command. The out of the curl will be something like:
+7. You can access the app either using a browser by typing http://localhost/hello or using the curl command. The out of the curl will be something like:
 ```bash
 ❯ curl localhost/hello -v
 *   Trying 127.0.0.1:80...
@@ -62,13 +58,13 @@ If you change the port in env for http then you need to adjust your curl by givi
 ```bash
 curl localhost:81/hello -v
 ```
-8. if you want to stop the services of the container you can do it using the following command, inside the folder that has the docker-compose.yml.
-```bash
-docker-compose down
-```
 
 
 ## Usefull commands
+- if you want to stop the services of the container you can do it using the following command, inside the folder that has the docker-compose.yml.
+```bash
+docker-compose down
+```
 - If  you need to access the logs of each container.
 ```bash
 docker logs container-name
