@@ -15,14 +15,14 @@ The installation steps are the following (please check the requirment above befo
 1. Download the repo in the folder that you want `git clone https://github.com/emakrygiannakis/webserver-php-nginx` .
 2. Move into the folder of the webserver 
 ```bash
-cd nginx-php-webserver
+cd webserver-php-nginx
 ```
 3. Create a new env file using the example.
 The env files has the ports for nginx php and the folder location that we can put our php files
 ```bash
 cp .env.example .env
 ```
-4. The variables can be changed in the file .env 
+4. The variables can be changed in the file .env . If ports in .env file are in use please change them with ports that you have access
 (important: If you don't know how to exit vim please use a different editor ;) )
 ```bash
 vim .env 
@@ -30,7 +30,7 @@ vim .env
 5. You can add the files for the php application inside the folder `www/public_html`. If you change the folder please place them inside there.
 6. After you finish with your configuration, you can start the container using the following command, inside the folder that has the docker-compose.yml.
 ```bash
-docker-compose up -d 
+docker-compose up -d --build --no-deps
 ```
 7. You can access the app either using a browser by typing http://localhost/hello or using the curl command. The out of the curl will be something like:
 ```bash
