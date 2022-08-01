@@ -54,8 +54,14 @@ docker-compose up -d --build --no-deps
 * Connection #0 to host localhost left intact
 Hello world!%   
 ```
-If you change the port in env for http then you need to adjust your curl by giving that port in the following example the user has the port 81.
+If port 80 is in use, then you need to change the http port in env file and you need to adjust also your curl command by giving that port. In the following example a user uses the port 81.
 ```bash
+❯ cat .env
+HTTP_HOST_PORT=81
+HTTPS_HOST_PORT=443
+PHP_FPM_PORT=9000
+VOL_SRC=./www
+
 curl localhost:81/hello -v
 ```
 
