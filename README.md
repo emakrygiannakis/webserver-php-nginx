@@ -12,7 +12,10 @@ You need to have install docker, docker-compose git and internet conection.
 
 The installation steps are the following (please check the requirment above before you continue):
 
-1. Download the repo in the folder that you want `git clone https://github.com/emakrygiannakis/webserver-php-nginx` .
+1. Download the repo
+```bash
+git clone https://github.com/emakrygiannakis/webserver-php-nginx` 
+```
 2. Move into the folder of the webserver 
 ```bash
 cd webserver-php-nginx
